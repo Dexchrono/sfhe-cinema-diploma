@@ -1,0 +1,33 @@
+.activityCard {
+  display: flex;
+  flex-flow: column;
+  gap: 0;
+  width: 100%;
+  background-color: rgba(241, 235, 230, 0.95);
+}
+
+.info {
+  display: flex;
+  min-height: 350px;
+}
+
+.hallName {
+  font-weight: bold;
+}
+
+.hallsList {
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+}
+
+.hallEventsList {
+  display: flex;
+  gap: 3px;
+}
+
+.hallEventsItemInfo {
+  display: block;
+  width: 53px;
+  background-color: #fff;
+}

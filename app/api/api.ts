@@ -1,10 +1,9 @@
-import type { Data } from "~/types/types";
+import type { Data } from "../types/types";
+import { API_BASE_URL } from "../constants/constants";
 
 export default async function MyApi(): Promise<Data> {
-  const url = "https://shfe-diplom.neto-server.ru/alldata";
-
   try {
-    const response = await fetch(url);
+    const response = await fetch(API_BASE_URL);
 
     if (!response.ok) {
       throw new Error(`Server error: ${response.status} ${response.statusText}`);

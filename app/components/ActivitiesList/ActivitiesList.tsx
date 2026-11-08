@@ -1,8 +1,8 @@
-import Activity from "~/components/Activity/Activity";
+import Activity from "../Activity/Activity";
 import styles from "./ActivitiesList.module.scss";
-import MyApi from "~/api/api";
+import MyApi from "../../api/api";
 import { useEffect, useState } from "react";
-import type { Film, Hall, Seance } from "~/types/types";
+import type { Film, Hall, Seance } from "../../types/types";
 
 export default function ActivitiesList() {
   const [halls, setHalls] = useState<Hall[]>([]);

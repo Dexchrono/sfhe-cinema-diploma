@@ -1,4 +1,4 @@
-import type { Film, Hall, Seance } from "~/types/types";
+import type { Film, Hall, Seance } from "../../types/types";
 import styles from "./Activity.module.scss";
 
 interface ActivityCardProps {

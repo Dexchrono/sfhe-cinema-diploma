@@ -1,7 +1,13 @@
 import type { Film, Hall, Seance } from "~/types/types";
 import styles from "./Activity.module.scss";
 
-export default function ActivityCard(halls: Hall[], film: Film, seances: Seance[]) {
+interface ActivityCardProps {
+  halls: Hall[];
+  film: Film;
+  seances: Seance[];
+}
+
+export default function ActivityCard({ halls, film, seances }: ActivityCardProps) {
   return (
     <div className={styles.activityCard}>
       <div className={styles.info}>
@@ -10,7 +16,7 @@ export default function ActivityCard(halls: Hall[], film: Film, seances: Seance[
         </div>
         <div className={styles.content}>
           <div className={styles.title}>{film.film_name}</div>
-          <div className={styles.descr}></div>
+          <div className={styles.descr}>{film.film_description}</div>
           <div className={styles.duration}>{film.film_duration}</div>
         </div>
       </div>

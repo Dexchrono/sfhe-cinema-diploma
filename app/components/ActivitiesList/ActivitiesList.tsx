@@ -6,22 +6,22 @@ import type { Film, Hall, Seance } from "~/types/types";
 
 export default function ActivitiesList() {
   const [halls, setHalls] = useState<Hall[]>([]);
-  const [movies, setMovies] = useState<Film[]>([]);
+  const [films, setFilms] = useState<Film[]>([]);
   const [seances, setSeances] = useState<Seance[]>([]);
 
   useEffect(() => {
     MyApi().then((res) => {
       setHalls(res.halls);
-      setMovies(res.films);
+      setFilms(res.films);
       setSeances(res.seances);
     });
   }, []);
 
   return (
     <ul className={styles.activitiesList}>
-      {movies.map((movie) => (
-        <li key={movie.id} className={styles.item}>
-          <Activity halls={halls} movie={movie} seances={seances} />
+      {films.map((film) => (
+        <li key={film.id} className={styles.item}>
+          <Activity halls={halls} film={film} seances={seances} />
         </li>
       ))}
     </ul>

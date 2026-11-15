@@ -1,87 +1,65 @@
-# Welcome to React Router!
+# Приложение для расписания и бронирования билетов в кинотеатр
 
-A modern, production-ready template for building full-stack React applications using React Router.
+Современное веб-приложение для просмотра расписания сеансов, выбора кинозалов и бронирования билетов по датам.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+## Стек технологий
 
-## Features
+- **Фреймворк:** [React Router v8](https://reactrouter.com) (Framework Mode с `@react-router/node` и `@react-router/serve`)
+- **UI-библиотека:** [React 19](https://react.dev)
+- **Язык:** TypeScript
+- **Стилизация:** SCSS Modules
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+## Основной функционал
 
-## Getting Started
+- **Навигация по расписанию на 7 дней:** интерактивный календарь для выбора даты и просмотра ближайших сеансов.
+- **Список фильмов и сеансов:** отображение актуальных фильмов, времени показов и доступных залов.
+- **Загрузка данных:** использование загрузчиков (loaders) React Router для быстрой навигации и чистого управления состоянием.
 
-### Installation
+## Структура проекта
 
-Install the dependencies:
-
-```bash
-npm install
+```text
+app/
+├── api/          # API-клиент и функции для получения данных
+├── components/   # Переиспользуемые UI-компоненты (Hall, HallContent, Header)
+├── pages/        # Компоненты страниц маршрутов (HomePage)
+├── types/        # Общие интерфейсы и типы TypeScript
+├── utility/      # Вспомогательные функции (например, работа с датами)
+├── root.tsx      # Корневой макет приложения
+└── routes.ts     # Конфигурация маршрутов
 ```
 
-### Development
+## Запуск проекта
 
-Start the development server with HMR:
+### Требования
 
-```bash
-npm run dev
-```
+- Node.js (рекомендуется версия 20 или выше)
+- npm, pnpm или yarn
 
-Your application will be available at `http://localhost:5173`.
+### Установка
 
-## Building for Production
+1. Клонируйте репозиторий:
 
-Create a production build:
+   ```bash
+   git clone https://github.com
+   cd your-repo-name
+   ```
 
-```bash
-npm run build
-```
+2. Установите зависимости:
 
-## Deployment
+   ```bash
+   npm install
+   ```
 
-### Docker Deployment
+3. Запустите сервер для разработки:
+   ```bash
+   npm run dev
+   ```
 
-To build and run using Docker:
+Приложение будет доступно по адресу `https://dexchrono.github.io/sfhe-cinema-diploma/`.
 
-```bash
-docker build -t my-app .
+## Доступные команды
 
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
----
-
-Built with ❤️ using React Router.
+- `npm run dev` — запуск локального сервера разработки с горячей перезагрузкой (HMR).
+- `npm run build` — сборка приложения для продакшена.
+- `npm run start` — запуск собранного приложения через `@react-router/serve`.
+- `npm run typecheck` — проверка типов TypeScript и генерация типов React Router.

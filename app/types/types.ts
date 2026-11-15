@@ -6,6 +6,16 @@ export interface Data {
   seances: Seance[];
 }
 
+export interface DataPropsDrillingIssue {
+  halls: Hall[];
+  film: Data["films"][number];
+  seances: Seance[];
+}
+
+export interface DataPropsDrillingIssueFix extends Data {
+  film: Data["films"][number];
+}
+
 export interface Hall {
   id: number;
   hall_name: string;

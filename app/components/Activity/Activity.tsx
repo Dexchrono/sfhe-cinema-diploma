@@ -1,4 +1,5 @@
 import type { DataPropsDrillingIssue } from "../../types/types";
+import ActivityTime from "../ActivityTime/ActivityTime";
 import styles from "./Activity.module.scss";
 
 export default function ActivityCard({ halls, film, seances }: DataPropsDrillingIssue) {
@@ -15,26 +16,7 @@ export default function ActivityCard({ halls, film, seances }: DataPropsDrilling
           <div className={styles.origin}>{film.film_origin}</div>
         </div>
       </div>
-      <div className={styles.seances}>
-        <ul className={styles.seancesList}>
-          {halls.map((hall) => (
-            <li key={hall.id} className={styles.hallsListItem}>
-              <div className={styles.hallInfo}>
-                <div className={styles.hallName}>{hall.hall_name}</div>
-                <ul className={styles.hallEventsList}>
-                  {seances.map((seance) => (
-                    <li key={seance.id} className={styles.hallEventsItem}>
-                      <a className={styles.hallEventsItemInfo} href="#">
-                        {seance.seance_time}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <ActivityTime film={film} halls={halls} seances={seances.filter((s) => s.seance_filmid === film.id)} />
     </div>
   );
 }

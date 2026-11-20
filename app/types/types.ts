@@ -42,3 +42,9 @@ export interface Seance {
   seance_hallid: number;
   seance_time: string;
 }
+
+export interface PreOrder {
+  hall: Hall;
+  film: Film;
+  seance: Seance;
+}

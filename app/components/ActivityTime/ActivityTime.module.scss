@@ -1,0 +1,16 @@
+.hallsList {
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+}
+
+.hallEventsList {
+  display: flex;
+  gap: 3px;
+}
+
+.hallEventsItemInfo {
+  display: block;
+  width: 53px;
+  background-color: #fff;
+}

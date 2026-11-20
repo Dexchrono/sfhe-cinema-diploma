@@ -19,7 +19,7 @@ export default function HallContent({ halls, films, seances, calendarDays, selec
         <HallCalendar days={calendarDays} selectedDay={selectedDate} onSelectDate={setSelectedDate} />
       </div>
       <div className={styles.activities}>
-        <ActivitiesList halls={halls} films={films} seances={seances} />
+        <ActivitiesList halls={halls} films={films} seances={seances} selectedDate={selectedDate} />
       </div>
     </section>
   );

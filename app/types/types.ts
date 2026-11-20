@@ -1,19 +1,9 @@
-export type SeatType = "standart" | "vip" | "disabled";
+export type SeatType = "standart" | "vip" | "disabled" | "sold";
 
 export interface Data {
   halls: Hall[];
   films: Film[];
   seances: Seance[];
-}
-
-export interface DataPropsDrillingIssue {
-  halls: Hall[];
-  film: Data["films"][number];
-  seances: Seance[];
-}
-
-export interface DataPropsDrillingIssueFix extends Data {
-  film: Data["films"][number];
 }
 
 export interface Hall {
@@ -47,4 +37,5 @@ export interface PreOrder {
   hall: Hall;
   film: Film;
   seance: Seance;
+  selectedDate: Date;
 }

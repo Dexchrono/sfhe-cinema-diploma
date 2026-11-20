@@ -25,7 +25,7 @@ export default function HallCalendar({ days, selectedDay, onSelectDate }: HallCa
           const isActive = date.getDate() === selectedDay.getDate() && date.getMonth() === selectedDay.getMonth();
 
           return (
-            <li className={`${styles.item} ${styles.itemActive}`}>
+            <li key={dayNumber} className={`${styles.item} ${styles.itemActive}`}>
               <button key={index} className={`${styles.btn} ${isActive ? styles.btnActive : ""}`} onClick={() => onSelectDate(date)}>
                 <div className={styles.btnWrapper}>
                   <div className={styles.btnDateofweek}>{dayName}</div>

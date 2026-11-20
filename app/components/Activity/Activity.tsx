@@ -1,8 +1,15 @@
-import type { DataPropsDrillingIssue } from "../../types/types";
+import type { Film, Hall, Seance } from "../../types/types";
 import ActivityTime from "../ActivityTime/ActivityTime";
 import styles from "./Activity.module.scss";
 
-export default function ActivityCard({ halls, film, seances }: DataPropsDrillingIssue) {
+interface ActivityCardProps {
+  selectedDate: Date;
+  halls: Hall[];
+  film: Film;
+  seances: Seance[];
+}
+
+export default function ActivityCard({ halls, film, seances, selectedDate }: ActivityCardProps) {
   return (
     <div className={styles.activityCard}>
       <div className={styles.info}>
@@ -16,7 +23,7 @@ export default function ActivityCard({ halls, film, seances }: DataPropsDrilling
           <div className={styles.origin}>{film.film_origin}</div>
         </div>
       </div>
-      <ActivityTime film={film} halls={halls} seances={seances.filter((s) => s.seance_filmid === film.id)} />
+      <ActivityTime film={film} halls={halls} seances={seances.filter((s) => s.seance_filmid === film.id)} selectedDate={selectedDate} />
     </div>
   );
 }

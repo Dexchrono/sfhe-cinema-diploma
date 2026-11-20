@@ -7,9 +7,10 @@ interface ActivityTimeProps {
   halls: Hall[];
   seances: Seance[];
   film: Film;
+  selectedDate: Date;
 }
 
-export default function ActivityTime({ halls, seances, film }: ActivityTimeProps) {
+export default function ActivityTime({ halls, seances, film, selectedDate }: ActivityTimeProps) {
   const sortedSeances = getSortedSeances(seances);
 
   const hallsWithSeances = halls
@@ -30,7 +31,7 @@ export default function ActivityTime({ halls, seances, film }: ActivityTimeProps
               <ul className={styles.hallEventsList}>
                 {hallSeances.map((seance) => (
                   <li key={seance.id} className={styles.hallEventsItem}>
-                    <Link className={styles.hallEventsItemInfo} to="seats" state={{ hall, film, seance }}>
+                    <Link className={styles.hallEventsItemInfo} to="seats" state={{ hall, film, seance, selectedDate }}>
                       {seance.seance_time}
                     </Link>
                   </li>
